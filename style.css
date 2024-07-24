@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
@@ -11,6 +12,7 @@ body {
   color: #333;
   scroll-behavior: smooth;
 }
+
 
 header {
   background-color: #ccc; 
@@ -25,7 +27,7 @@ header {
 header nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: right;
+  justify-content: center;
 }
 
 header nav ul li {
@@ -50,11 +52,11 @@ main {
   padding: 20px;
   max-width: 800px;
   margin: auto;
-  padding-top: 80px;
+  padding-top: 80px; 
 }
 
 main section {
-  padding-top: 80px;
+  padding-top: 80px; 
 }
 
 main h1, main h2, main h4 {
@@ -93,7 +95,6 @@ button {
   color: #fff;
   border: none;
   padding: 10px 20px;
-  margin-bottom: 10px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
@@ -102,6 +103,13 @@ button {
 
 button:hover {
   background-color: #9c27b0;
+}
+
+@media (max-width: 768px) {
+  main button {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
 }
 
 footer {
