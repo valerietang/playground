@@ -108,8 +108,8 @@ button:hover {
 
 @media (max-width: 768px) {
   main button {
-    font-size: 18px;
-    padding: 15px 25px;
+    font-size: 20px;
+    padding: 20px 30px;
   }
 }
 
