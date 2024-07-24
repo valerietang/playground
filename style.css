@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +16,7 @@ body {
 
 /* Header Styles */
 header {
-  background-color: #7b2cbf; 
+  background-color: #b388ff; 
   color: #fff;
   padding: 20px 0;
   text-align: center;
@@ -28,7 +29,7 @@ header {
 header nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: right;
+  justify-content: center;
 }
 
 header nav ul li {
@@ -45,7 +46,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background-color: #9c27b0;
+  background-color: #ce93d8;
   transform: scale(1.05);
 }
 
@@ -62,7 +63,7 @@ main section {
 }
 
 main h1, main h2, main h4 {
-  color: #7b2cbf;
+  color: #b388ff;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -78,13 +79,13 @@ main p, main ul, main a {
 }
 
 main a {
-  color: #7b2cbf;
+  color: #b388ff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 main a:hover {
-  color: #9c27b0;
+  color: #ce93d8;
 }
 
 main img {
@@ -101,7 +102,7 @@ main ul {
 
 /* Button Styles */
 button {
-  background-color: #7b2cbf;
+  background-color: #b388ff;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -113,7 +114,7 @@ button {
 }
 
 button:hover {
-  background-color: #9c27b0;
+  background-color: #ce93d8;
   transform: scale(1.05);
 }
 
