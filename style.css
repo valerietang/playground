@@ -70,15 +70,10 @@ main h1 {
   margin-bottom: 20px;
 }
 
-main ul{
+main ul, main p , main a{
   color: #555;
   font-size: 16px;
 }
-
-main p, main a {
-  color: #555;
-  font-size: 16px;
-  text-align: center;
 
 main a {
   color: #b388ff;
