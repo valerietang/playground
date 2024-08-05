@@ -73,6 +73,7 @@ main h1 {
 main ul, main p , main a{
   color: #555;
   font-size: 16px;
+  padding: 10px;
 }
 
 main a {
