@@ -16,7 +16,7 @@ body {
 
 /* Header Styles */
 header {
-  background-color: #c8a2c8;
+  background-color: #d4a5d6;
   color: #fff;
   padding: 20px 0;
   text-align: center;
@@ -63,7 +63,7 @@ main section {
 }
 
 main h1, main h2, main h4 {
-  color: #c8a2c8; 
+  color: #d4a5d6;
   font-family: 'Montserrat', sans-serif;
   padding: 10px;
 }
@@ -81,7 +81,7 @@ main ul, main p, main a {
 }
 
 main a {
-  color: #c8a2c8; 
+  color: #d4a5d6; 
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -103,9 +103,8 @@ main ul {
   padding-left: 50px;
 }
 
-/* Button Styles */
 button {
-  background-color: #c8a2c8; 
+  background-color: #d4a5d6; 
   color: #fff;
   border: none;
   padding: 10px 20px;
