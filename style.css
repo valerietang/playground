@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -13,8 +14,9 @@ body {
   padding: 0 px;
 }
 
+/* Header Styles */
 header {
-  background-color: #b388ff; 
+  background-color: #c8a2c8;
   color: #fff;
   padding: 20px 0;
   text-align: center;
@@ -48,6 +50,7 @@ header nav ul li a:hover {
   transform: scale(1.05);
 }
 
+/* Main Content Styles */
 main {
   padding: 20px;
   max-width: 800px;
@@ -60,7 +63,7 @@ main section {
 }
 
 main h1, main h2, main h4 {
-  color: #b388ff;
+  color: #c8a2c8; 
   font-family: 'Montserrat', sans-serif;
   padding: 10px;
 }
@@ -71,15 +74,14 @@ main h1 {
   margin-bottom: 20px;
 }
 
-main ul, main p, main a{
+main ul, main p, main a {
   color: #555;
   font-size: 16px;
   padding: 10px;
 }
 
-
 main a {
-  color: #b388ff;
+  color: #c8a2c8; 
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -101,9 +103,9 @@ main ul {
   padding-left: 50px;
 }
 
-
+/* Button Styles */
 button {
-  background-color: #b388ff;
+  background-color: #c8a2c8; 
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -119,6 +121,7 @@ button:hover {
   transform: scale(1.05);
 }
 
+/* Section Backgrounds */
 main section:nth-child(odd) {
   background-color: #f9f9f9;
 }
@@ -127,6 +130,7 @@ main section:nth-child(even) {
   background-color: #fff;
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
   header nav ul {
     flex-direction: column;
