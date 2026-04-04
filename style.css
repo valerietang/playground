@@ -1,5 +1,5 @@
 /* Global Styles - Importing Playful Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Fredoka+One&family=Patrick+Hand&family=Comfortaa:wght@300;400;500;600;700&family=Gaegu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Fredoka+One&family=Patrick+Hand&family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -16,7 +16,7 @@ body {
   padding: 0;
   position: relative;
   font-weight: 400;
-  font-size: 18px; /* Bigger base font for mobile */
+  font-size: 18px;
 }
 
 /* Animated background gradient */
@@ -99,7 +99,6 @@ header nav ul li a {
   display: inline-block;
 }
 
-/* Cool underline animation for nav links */
 header nav ul li a::after {
   content: '';
   position: absolute;
@@ -153,36 +152,6 @@ main section {
 main section:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* ANIMATED TITLE WITH BOUNCING LETTERS */
-.bouncing-title {
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-}
-
-.bouncing-title span {
-  display: inline-block;
-  animation: bounceLetter 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-  opacity: 0;
-}
-
-@keyframes bounceLetter {
-  0% {
-    transform: translateY(-50px) scale(0.5);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(15px) scale(1.1);
-  }
-  70% {
-    transform: translateY(-5px) scale(0.95);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
 }
 
 main h1, main h2, main h4 {
@@ -336,7 +305,6 @@ main ul li:hover {
   color: #CC33FF;
 }
 
-/* Custom list styling for ordered lists */
 main ol {
   padding-left: 25px;
   margin: 20px 0;
@@ -350,7 +318,7 @@ main ol li {
   line-height: 1.6;
 }
 
-/* BUTTON GROUP - SIDE BY SIDE BUTTONS - CENTERED */
+/* BUTTON GROUP */
 .button-group {
   display: flex;
   gap: 15px;
@@ -360,7 +328,6 @@ main ol li {
   margin: 30px 0;
 }
 
-/* Style for links inside button group */
 .button-group a {
   text-decoration: none;
   display: inline-block;
@@ -368,7 +335,6 @@ main ol li {
   flex: 0 1 auto;
 }
 
-/* Individual Button Styles - Playful */
 button {
   background: linear-gradient(135deg, #CC33FF 0%, #9b1fb3 100%);
   color: #fff;
@@ -388,7 +354,6 @@ button {
   letter-spacing: 1px;
 }
 
-/* Ripple effect */
 button::before {
   content: '';
   position: absolute;
@@ -418,7 +383,6 @@ button:active {
   transform: translateY(0) scale(0.98);
 }
 
-/* Different button variants */
 .button-primary {
   background: linear-gradient(135deg, #CC33FF, #9b1fb3);
 }
@@ -440,18 +404,16 @@ button:active {
   transform: translateY(-5px);
 }
 
-/* Section Backgrounds - Light Pink and Light Yellow */
-/* Odd sections (1st, 3rd, 5th, etc.) - Light Pink */
+/* Section Backgrounds */
 main section:nth-child(odd) {
   background: linear-gradient(135deg, #fff5f8 0%, #ffe0eb 100%);
 }
 
-/* Even sections (2nd, 4th, 6th, etc.) - Very Light Yellow */
 main section:nth-child(even) {
   background: linear-gradient(135deg, #fffff0 0%, #fff9d6 100%);
 }
 
-/* Card-style containers */
+/* Card containers */
 .card-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -538,7 +500,6 @@ main section:nth-child(even) {
   transform: translateY(-5px) scale(1.1);
 }
 
-/* Loading animation for buttons */
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(204, 51, 255, 0.7);
@@ -556,11 +517,7 @@ button:focus {
   outline: none;
 }
 
-/* ========== RESPONSIVE STYLES ========== */
-
-/* Mobile First - Already optimized for small screens */
-
-/* Tablet Styles */
+/* Responsive Styles */
 @media (min-width: 768px) {
   body {
     font-size: 18px;
@@ -602,7 +559,6 @@ button:focus {
   }
 }
 
-/* Desktop Styles */
 @media (min-width: 1024px) {
   body {
     font-size: 18px;
@@ -629,7 +585,6 @@ button:focus {
   }
 }
 
-/* Small Mobile Styles (under 480px) */
 @media (max-width: 480px) {
   body {
     font-size: 16px;
