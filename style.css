@@ -8,28 +8,30 @@
 body {
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
   color: #333;
   scroll-behavior: smooth;
-  padding: 0 px;
+  padding: 0;
 }
 
 /* Header Styles */
 header {
-  background-color: #CC33FF;
+  background: linear-gradient(135deg, #CC33FF 0%, #9b1fb3 100%);
   color: #fff;
   padding: 20px 0;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 header nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
+  margin-right: 40px;
 }
 
 header nav ul li {
@@ -41,25 +43,29 @@ header nav ul li a {
   text-decoration: none;
   font-size: 18px;
   padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 header nav ul li a:hover {
-  background-color: #CC33FF;
-  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 /* Main Content Styles */
 main {
   padding: 20px;
-  max-width: 800px;
+  max-width: 1200px;
   margin: auto;
   padding-top: 100px;
 }
 
 main section {
   padding: 60px 20px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 main h1, main h2, main h4 {
@@ -69,9 +75,19 @@ main h1, main h2, main h4 {
 }
 
 main h1 {
-  font-size: 3em;
+  font-size: 3.5em;
   text-align: center;
   margin-bottom: 20px;
+  background: linear-gradient(135deg, #CC33FF, #ff85c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+main h2 {
+  font-size: 2em;
+  border-left: 5px solid #CC33FF;
+  padding-left: 20px;
 }
 
 main ul, main p, main a {
@@ -83,11 +99,13 @@ main ul, main p, main a {
 main a {
   color: #CC33FF;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 main a:hover {
   color: #ff85c2;
+  text-decoration: underline;
 }
 
 main img {
@@ -96,6 +114,8 @@ main img {
   display: block;
   margin: 20px auto;
   padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 main ul {
@@ -103,45 +123,150 @@ main ul {
   padding-left: 50px;
 }
 
-/* Button Styles */
+/* BUTTON GROUP - SIDE BY SIDE BUTTONS */
+.button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+/* Individual Button Styles */
 button {
-  background-color: #CC33FF;
+  background: linear-gradient(135deg, #CC33FF 0%, #9b1fb3 100%);
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  margin-bottom: 10px;
+  padding: 12px 28px;
   font-size: 16px;
-  border-radius: 5px;
+  font-weight: 600;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(204, 51, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  flex: 0 1 auto;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 button:hover {
-  background-color: #ff85c2;
-  transform: scale(1.05);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(204, 51, 255, 0.4);
+  background: linear-gradient(135deg, #ff85c2 0%, #CC33FF 100%);
 }
 
-/* Section Backgrounds */
+button:active {
+  transform: translateY(0);
+}
+
+/* Different button variants */
+.button-primary {
+  background: linear-gradient(135deg, #CC33FF, #9b1fb3);
+}
+
+.button-secondary {
+  background: linear-gradient(135deg, #ff85c2, #CC33FF);
+}
+
+.button-outline {
+  background: transparent;
+  border: 2px solid #CC33FF;
+  color: #CC33FF;
+  box-shadow: none;
+}
+
+.button-outline:hover {
+  background: #CC33FF;
+  color: white;
+}
+
+/* Section Backgrounds with cool gradients */
 main section:nth-child(odd) {
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
 }
 
 main section:nth-child(even) {
-  background-color: #fff;
+  background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+}
+
+/* Card-style containers */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(204, 51, 255, 0.15);
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   header nav ul {
     flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+  
+  header nav ul li {
+    margin: 5px 0;
   }
 
   main h1 {
     font-size: 2.5em;
   }
+  
+  main h2 {
+    font-size: 1.8em;
+  }
 
-  main button {
-    font-size: 18px;
-    padding: 15px 25px;
+  /* Buttons stack vertically on mobile, or keep horizontal if space allows */
+  .button-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  button {
+    width: 100%;
   }
 }
