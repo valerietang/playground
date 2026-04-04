@@ -343,13 +343,15 @@ button:active {
   transform: translateY(-3px);
 }
 
-/* Section Backgrounds with cool gradients */
+/* Section Backgrounds - Light Pink and Light Yellow */
+/* Odd sections (1st, 3rd, 5th, etc.) - Light Pink */
 main section:nth-child(odd) {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  background: linear-gradient(135deg, #fff5f8 0%, #ffe0eb 100%);
 }
 
+/* Even sections (2nd, 4th, 6th, etc.) - Very Light Yellow */
 main section:nth-child(even) {
-  background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #fffff0 0%, #fff9d6 100%);
 }
 
 /* Card-style containers */
@@ -390,7 +392,7 @@ main section:nth-child(even) {
   box-shadow: 0 15px 35px rgba(204, 51, 255, 0.15);
 }
 
-/* Scroll to top button (add this to your HTML) */
+/* Scroll to top button */
 .scroll-top {
   position: fixed;
   bottom: 30px;
@@ -421,7 +423,7 @@ main section:nth-child(even) {
   transform: translateY(-3px);
 }
 
-/* Loading animation for buttons (optional) */
+/* Loading animation for buttons */
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(204, 51, 255, 0.7);
