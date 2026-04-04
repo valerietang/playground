@@ -80,14 +80,19 @@
     <div class="scroll-top" id="scrollTop">↑</div>
 
     <script>
-// Bouncing title animation
+// Bouncing title animation - FIXED visibility
 document.addEventListener('DOMContentLoaded', function() {
   const titleElement = document.querySelector('main h1');
-  if (titleElement) {
+  if (titleElement && !titleElement.querySelector('.bouncing-title')) {
     const titleText = titleElement.innerText;
-    const wrappedText = titleText.split('').map(letter => 
-      letter === ' ' ? '&nbsp;' : `<span style="animation-delay: ${Math.random() * 0.2}s">${letter}</span>`
-    ).join('');
+    // Wrap each letter in a span with animation delay
+    const wrappedText = titleText.split('').map(letter => {
+      if (letter === ' ') {
+        return '<span style="display: inline-block; width: 0.3em;">&nbsp;</span>';
+      }
+      const delay = (Math.random() * 0.3).toFixed(2);
+      return `<span style="animation-delay: ${delay}s; display: inline-block;">${letter}</span>`;
+    }).join('');
     titleElement.innerHTML = `<div class="bouncing-title">${wrappedText}</div>`;
   }
   
@@ -141,7 +146,3 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-  
-</body>
-
-</html>
