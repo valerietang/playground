@@ -80,69 +80,52 @@
     <div class="scroll-top" id="scrollTop">↑</div>
 
     <script>
-// Bouncing title animation - FIXED visibility
-document.addEventListener('DOMContentLoaded', function() {
-  const titleElement = document.querySelector('main h1');
-  if (titleElement && !titleElement.querySelector('.bouncing-title')) {
-    const titleText = titleElement.innerText;
-    // Wrap each letter in a span with animation delay
-    const wrappedText = titleText.split('').map(letter => {
-      if (letter === ' ') {
-        return '<span style="display: inline-block; width: 0.3em;">&nbsp;</span>';
-      }
-      const delay = (Math.random() * 0.3).toFixed(2);
-      return `<span style="animation-delay: ${delay}s; display: inline-block;">${letter}</span>`;
-    }).join('');
-    titleElement.innerHTML = `<div class="bouncing-title">${wrappedText}</div>`;
-  }
+// Scroll to top functionality
+const scrollBtn = document.getElementById('scrollTop');
+if (scrollBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+    }
+  });
   
-  // Scroll to top functionality
-  const scrollBtn = document.getElementById('scrollTop');
-  if (scrollBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollBtn.classList.add('show');
-      } else {
-        scrollBtn.classList.remove('show');
-      }
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
+  });
+}
+
+// Add ripple effect to all buttons
+document.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', function(e) {
+    let ripple = document.createElement('span');
+    ripple.style.position = 'absolute';
+    ripple.style.left = `${e.clientX - e.target.offsetLeft}px`;
+    ripple.style.top = `${e.clientY - e.target.offsetTop}px`;
+    ripple.style.width = '0';
+    ripple.style.height = '0';
+    ripple.style.borderRadius = '50%';
+    ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+    ripple.style.transform = 'translate(-50%, -50%)';
+    ripple.style.transition = 'width 0.5s, height 0.5s';
+    ripple.style.pointerEvents = 'none';
     
-    scrollBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
-  
-  // Add playful ripple effect to all buttons
-  document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('click', function(e) {
-      let ripple = document.createElement('span');
-      ripple.style.position = 'absolute';
-      ripple.style.left = `${e.clientX - e.target.offsetLeft}px`;
-      ripple.style.top = `${e.clientY - e.target.offsetTop}px`;
-      ripple.style.width = '0';
-      ripple.style.height = '0';
-      ripple.style.borderRadius = '50%';
-      ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
-      ripple.style.transform = 'translate(-50%, -50%)';
-      ripple.style.transition = 'width 0.5s, height 0.5s';
-      ripple.style.pointerEvents = 'none';
-      
-      this.style.position = 'relative';
-      this.style.overflow = 'hidden';
-      this.appendChild(ripple);
-      
-      setTimeout(() => {
-        ripple.style.width = '200px';
-        ripple.style.height = '200px';
-      }, 10);
-      
-      setTimeout(() => {
-        ripple.remove();
-      }, 500);
-    });
+    this.style.position = 'relative';
+    this.style.overflow = 'hidden';
+    this.appendChild(ripple);
+    
+    setTimeout(() => {
+      ripple.style.width = '200px';
+      ripple.style.height = '200px';
+    }, 10);
+    
+    setTimeout(() => {
+      ripple.remove();
+    }, 500);
   });
 });
 </script>
