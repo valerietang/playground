@@ -76,5 +76,63 @@
     <br>
     <p>&copy; 2026 by Valerie Tang</p>
   </main>
+    <!-- Scroll to top button HTML -->
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <script>
+// Scroll to top functionality
+    const scrollBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+      scrollBtn.classList.add('show');
+      } else {
+      scrollBtn.classList.remove('show');
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+// Add ripple effect to all buttons
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', function(e) {
+        let x = e.clientX - e.target.offsetLeft;
+        let y = e.clientY - e.target.offsetTop;
+    
+        let ripple = document.createElement('span');
+        ripple.style.position = 'absolute';
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        ripple.style.width = '0';
+        ripple.style.height = '0';
+        ripple.style.borderRadius = '50%';
+        ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
+        ripple.style.transform = 'translate(-50%, -50%)';
+        ripple.style.transition = 'width 0.5s, height 0.5s';
+        ripple.style.pointerEvents = 'none';
+    
+        this.style.position = 'relative';
+        this.style.overflow = 'hidden';
+        this.appendChild(ripple);
+    
+        setTimeout(() => {
+          ripple.style.width = '200px';
+          ripple.style.height = '200px';
+        }, 10);
+    
+        setTimeout(() => {
+          ripple.remove();
+        }, 500);
+      });
+    });
+    </script>
+
+  
+</body>
 
 </html>
