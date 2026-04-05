@@ -1,4 +1,4 @@
-/* Global Styles - Importing Playful Fonts */
+/* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Fredoka+One&family=Patrick+Hand&family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -154,11 +154,12 @@ main section:hover {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
-main h1, main h2, main h4 {
+main h1, main h2, main h3, main h4 {
   font-family: 'Fredoka One', 'Patrick Hand', cursive;
   padding: 10px;
 }
 
+/* Title Gradient - Bold Purple to Pink */
 main h1 {
   font-size: 3.5em;
   text-align: center;
@@ -175,15 +176,12 @@ main h1 {
   line-height: 1.3;
 }
 
-@keyframes textGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
+/* H2 Gradient - Light Purple to Light Blue (Lighter than title) */
 main h2 {
   font-size: 2.2em;
-  border-left: 6px solid #CC33FF;
+  border-left: 6px solid transparent;
+  border-image: linear-gradient(135deg, #c084fc, #67e8f9);
+  border-image-slice: 1;
   padding-left: 18px;
   position: relative;
   overflow: hidden;
@@ -191,22 +189,38 @@ main h2 {
   letter-spacing: 1px;
   font-family: 'Fredoka One', cursive;
   margin-bottom: 20px;
+  background: linear-gradient(135deg, #c084fc, #67e8f9, #a78bfa);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: h2Gradient 8s ease infinite;
 }
 
-main h2::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #CC33FF, #ff85c2);
-  transition: width 0.5s ease;
-  border-radius: 10px;
+@keyframes h2Gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-main h2:hover::before {
-  width: 100%;
+/* H3 Gradient - Even Lighter, Soft Pastel Purple to Mint */
+main h3 {
+  font-size: 1.6em;
+  margin: 20px 0 15px 0;
+  font-weight: 400;
+  font-family: 'Fredoka One', cursive;
+  background: linear-gradient(135deg, #d8b4fe, #a5f3fc, #c4b5fd);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: h3Gradient 10s ease infinite;
+}
+
+@keyframes h3Gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 main h4 {
@@ -455,9 +469,20 @@ main section:nth-child(even) {
 .card h3 {
   font-family: 'Fredoka One', cursive;
   font-size: 1.6em;
-  color: #CC33FF;
   margin-bottom: 15px;
   font-weight: 400;
+  background: linear-gradient(135deg, #d8b4fe, #a5f3fc, #c4b5fd);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: cardH3Gradient 10s ease infinite;
+}
+
+@keyframes cardH3Gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .card p {
@@ -465,6 +490,7 @@ main section:nth-child(even) {
   font-weight: 400;
   line-height: 1.7;
   font-size: 1rem;
+  color: #555;
 }
 
 /* Scroll to top button */
@@ -531,6 +557,10 @@ button:focus {
     font-size: 2.5em;
   }
   
+  main h3 {
+    font-size: 1.8em;
+  }
+  
   main section {
     padding: 60px 35px;
   }
@@ -572,6 +602,10 @@ button:focus {
     font-size: 2.8em;
   }
   
+  main h3 {
+    font-size: 2em;
+  }
+  
   main section {
     padding: 80px 50px;
   }
@@ -607,6 +641,10 @@ button:focus {
   main h2 {
     font-size: 1.8em;
     padding-left: 15px;
+  }
+  
+  main h3 {
+    font-size: 1.4em;
   }
   
   main h4 {
